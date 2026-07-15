@@ -1,21 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-native';
-import { View } from 'react-native';
 
-import { ResursThemeProvider } from '@/src/theme';
 import { ResursText } from './ResursText';
 
 const meta = {
   title: 'Typography/ResursText',
   component: ResursText,
-  decorators: [
-    (Story) => (
-      <ResursThemeProvider>
-        <View style={{ padding: 16, gap: 8 }}>
-          <Story />
-        </View>
-      </ResursThemeProvider>
-    ),
-  ],
 } satisfies Meta<typeof ResursText>;
 
 export default meta;
@@ -40,14 +29,12 @@ export const AllVariants: Story = {
 
 export const DarkTheme: Story = {
   args: { children: 'Dark mode heading', variant: 'h3' },
-  decorators: [
-    (Story) => (
-      <ResursThemeProvider forceTheme="dark">
-        <View style={{ padding: 16 }}>
-          <Story />
-        </View>
-      </ResursThemeProvider>
-    ),
-  ],
   render: (args) => <ResursText {...args} />,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Toggle system dark mode in the browser or simulator to preview dark theme tokens.',
+      },
+    },
+  },
 };
