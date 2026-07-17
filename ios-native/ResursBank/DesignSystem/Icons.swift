@@ -1,0 +1,72 @@
+import Foundation
+
+// FontAwesome 6 `fa-*` name → SF Symbol. Faithful-port-with-native-feel:
+// the RN app draws FA6 glyphs; here we map to the closest SF Symbol so icons
+// feel native. Unknown names fall back to a neutral dot.
+enum Icons {
+    static let map: [String: String] = [
+        "fa-users": "person.2.fill",
+        "fa-credit-card": "creditcard.fill",
+        "fa-basket-shopping": "basket.fill",
+        "fa-bag-shopping": "bag.fill",
+        "fa-hammer": "hammer.fill",
+        "fa-tree": "tree.fill",
+        "fa-tv": "tv.fill",
+        "fa-headphones": "headphones",
+        "fa-gas-pump": "fuelpump.fill",
+        "fa-prescription-bottle": "pills.fill",
+        "fa-prescription-bottle-medical": "cross.case.fill",
+        "fa-film": "film.fill",
+        "fa-shirt": "tshirt.fill",
+        "fa-couch": "sofa.fill",
+        "fa-mug-hot": "cup.and.saucer.fill",
+        "fa-wine-bottle": "wineglass.fill",
+        "fa-blender": "fork.knife",
+        "fa-screwdriver-wrench": "wrench.and.screwdriver.fill",
+        "fa-piggy-bank": "banknote.fill",
+        "fa-coins": "dollarsign.circle.fill",
+        "fa-percent": "percent",
+        "fa-shield-halved": "checkmark.shield.fill",
+        "fa-gift": "gift.fill",
+        "fa-truck": "shippingbox.fill",
+        "fa-tag": "tag.fill",
+        "fa-clock": "clock.fill",
+        "fa-clock-rotate-left": "clock.arrow.circlepath",
+        "fa-pen-to-square": "square.and.pencil",
+        "fa-plus-circle": "plus.circle.fill",
+        "fa-circle-plus": "plus.circle.fill",
+        "fa-circle-info": "info.circle.fill",
+        "fa-circle-question": "questionmark.circle.fill",
+        "fa-bell": "bell.fill",
+        "fa-chevron-right": "chevron.right",
+        "fa-chevron-down": "chevron.down",
+        "fa-chevron-up": "chevron.up",
+        "fa-chevron-left": "chevron.left",
+        "fa-arrow-down": "arrow.down",
+        "fa-money-bill-transfer": "arrow.left.arrow.right",
+        "fa-file-invoice-dollar": "doc.text.fill",
+        "fa-building-columns": "building.columns.fill",
+        "fa-bolt": "bolt.fill",
+        "fa-compass": "safari.fill",
+        "fa-wallet": "wallet.bifold.fill",
+        "fa-list-check": "checklist",
+        "fa-user": "person.fill",
+        "fa-house": "house.fill",
+        "fa-comment": "bubble.left.fill",
+        "fa-envelope": "envelope.fill",
+        "fa-file-lines": "doc.text.fill",
+        "fa-gear": "gearshape.fill",
+        "fa-right-from-bracket": "rectangle.portrait.and.arrow.right",
+        "fa-check": "checkmark",
+        "fa-xmark": "xmark",
+        "fa-lock": "lock.fill",
+        "fa-arrow-right": "arrow.right",
+        "fa-piggy-bank-solid": "banknote.fill",
+        "fa-sun": "sun.max.fill",
+        "fa-moon": "moon.fill",
+    ]
+
+    static func sfSymbol(_ faName: String) -> String {
+        map[faName] ?? "circle.fill"
+    }
+}
