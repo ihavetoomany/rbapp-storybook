@@ -1,12 +1,15 @@
 import type { Preview } from '@storybook/react-native';
 
 import { ResursThemeProvider } from '@/src/theme';
+import { StoryCanvas } from '@/src/storybook/StoryCanvas';
 
 const preview: Preview = {
   decorators: [
     (Story) => (
       <ResursThemeProvider>
-        <Story />
+        <StoryCanvas>
+          <Story />
+        </StoryCanvas>
       </ResursThemeProvider>
     ),
   ],

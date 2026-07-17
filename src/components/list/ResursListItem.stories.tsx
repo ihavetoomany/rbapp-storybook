@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-native';
-import { View } from 'react-native';
-import { Divider, List } from 'react-native-paper';
+import { List } from 'react-native-paper';
 
-import { ResursThemeProvider } from '@/src/theme';
 import { ResursListItem } from './ResursListItem';
 
 const meta = {
@@ -10,13 +8,9 @@ const meta = {
   component: ResursListItem,
   decorators: [
     (Story) => (
-      <ResursThemeProvider>
-        <View style={{ padding: 16 }}>
-          <List.Section>
-            <Story />
-          </List.Section>
-        </View>
-      </ResursThemeProvider>
+      <List.Section>
+        <Story />
+      </List.Section>
     ),
   ],
 } satisfies Meta<typeof ResursListItem>;
@@ -44,20 +38,8 @@ export const MerchantList: Story = {
         icon="store"
         showChevron
       />
-      <Divider />
-      <ResursListItem
-        title="Jula"
-        description="Tools & garden"
-        icon="store"
-        showChevron
-      />
-      <Divider />
-      <ResursListItem
-        title="Boozt"
-        description="Fashion"
-        icon="store"
-        showChevron
-      />
+      <ResursListItem title="Jula" description="Tools & garden" icon="store" showChevron />
+      <ResursListItem title="Boozt" description="Fashion" icon="store" showChevron />
     </>
   ),
 };

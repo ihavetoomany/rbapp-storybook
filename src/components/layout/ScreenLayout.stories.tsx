@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-native';
 
-import { ResursThemeProvider } from '@/src/theme';
 import { ResursButton } from '../buttons/ResursButton';
 import { ResursCard } from '../cards/ResursCard';
 import { ScreenLayout } from './ScreenLayout';
@@ -8,13 +7,6 @@ import { ScreenLayout } from './ScreenLayout';
 const meta = {
   title: 'Layout/ScreenLayout',
   component: ScreenLayout,
-  decorators: [
-    (Story) => (
-      <ResursThemeProvider>
-        <Story />
-      </ResursThemeProvider>
-    ),
-  ],
 } satisfies Meta<typeof ScreenLayout>;
 
 export default meta;

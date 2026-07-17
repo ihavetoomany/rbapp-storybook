@@ -8,7 +8,8 @@
     "scheme": "resursbank",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "se.resursbank.app.dev"
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +26,7 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      "expo-dev-client",
       "expo-router",
       [
         "expo-splash-screen",

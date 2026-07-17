@@ -42,3 +42,7 @@ yarn-error.*
 
 *storybook.log
 storybook-static
+
+# Claude Code local state
+.claude/settings.local.json
+.claude/worktrees/

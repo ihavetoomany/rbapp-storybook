@@ -26,11 +26,14 @@ type ResursTextProps = {
   variant?: ResursTextVariant;
   children: React.ReactNode;
   style?: StyleProp<TextStyle>;
+  numberOfLines?: number;
+  accessibilityElementsHidden?: boolean;
+  importantForAccessibility?: 'auto' | 'yes' | 'no' | 'no-hide-descendants';
 };
 
-export function ResursText({ variant = 'body1', children, style }: ResursTextProps) {
+export function ResursText({ variant = 'body1', children, style, numberOfLines, ...rest }: ResursTextProps) {
   return (
-    <Text variant={variantMap[variant]} style={style}>
+    <Text variant={variantMap[variant]} style={style} numberOfLines={numberOfLines} {...rest}>
       {children}
     </Text>
   );

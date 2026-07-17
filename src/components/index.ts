@@ -3,4 +3,8 @@ export { ResursCard } from './cards/ResursCard';
 export { ResursChip } from './chips/ResursChip';
 export { ScreenLayout } from './layout/ScreenLayout';
 export { ResursListItem } from './list/ResursListItem';
+export { ResursQuickLink } from './quicklinks/ResursQuickLink';
+export type { QuickLinkTrend, ResursQuickLinkProps } from './quicklinks/ResursQuickLink';
+export { WalletQuickLinks } from './quicklinks/WalletQuickLinks';
+export type { WalletQuickLinksProps } from './quicklinks/WalletQuickLinks';
 export { ResursText } from './typography/ResursText';

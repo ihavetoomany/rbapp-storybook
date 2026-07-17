@@ -32,16 +32,33 @@ npm run android    # Android emulator
 npm run web        # Browser
 ```
 
-### Run Storybook
+### Run Storybook (device / Metro)
 
 Storybook uses entry-point swapping — set `STORYBOOK_ENABLED=true` to load the component catalog instead of the app.
 
 ```bash
 npm run storybook       # Dev server (Storybook mode)
-npm run storybook:web   # Storybook in browser
+npm run storybook:web   # Storybook in browser (Metro)
 npm run storybook:ios   # Storybook on iOS
 npm run storybook:android
 ```
+
+### Run Storybook (browser / a11y)
+
+Browser Storybook uses Vite + `@storybook/addon-a11y` (axe-core) for automated accessibility checks.
+
+```bash
+npm run storybook:browser   # http://localhost:6006 — Accessibility panel + vision simulator
+npm run test:a11y           # Run a11y tests in CI (requires Playwright Chromium)
+```
+
+First-time setup for automated tests:
+
+```bash
+npx playwright install chromium
+```
+
+Stories with `parameters.a11y.test: 'error'` fail `npm run test:a11y` when axe finds violations. See `ResursButton` → **AccessiblePrimary** for an example.
 
 ## Project structure
 
@@ -52,7 +69,8 @@ src/
   components/           # Paper-based shared components + *.stories.tsx
   features/             # Tab screen content
   theme/                # Resurs palette, Paper MD3 theme, ThemeProvider
-.rnstorybook/           # Storybook config
+.rnstorybook/           # On-device Storybook (Metro)
+.storybook/             # Browser Storybook (Vite + a11y)
 assets/fonts/           # Inter font files
 ```
 
